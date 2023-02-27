@@ -44,8 +44,8 @@ function setup() {
   angleMode(DEGREES);
   imageMode(CENTER);
   deg = 0;
-  descheck = [false, false, false, false, false, false];
-  funcheck = [false, false, false, false, false, false];
+  desavail = [true, true, true, true, true, true];
+  funavail = [true, true, true, true, true, true];
 }
 
 function draw() {
@@ -215,6 +215,7 @@ function mouseClicked() {
     f4 = getRandomItem(fun);
     f5 = getRandomItem(fun);
     f6 = getRandomItem(fun);
+
   }
 }
 // get random item from array (source: programiz.com/javascript/examples/get-random-item)
@@ -224,11 +225,9 @@ function getRandomItem(arr) {
   return item;
 }
 
+
 function keyPressed() {
   if (move){
   rock++;
   }
-  console.log(rock);
-  console.log(d1);
-  console.log(d2);
 }
