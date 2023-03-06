@@ -14,19 +14,19 @@ let f5;
 let f6;
 let des = [];
 let fun = [];
-let descheck = [];
-let funcheck = [];
+let desShown = [];
+let funShown = [];
 
 
 function preload() {
   flames1 = loadImage("img/flames1.jpg");
   flames = loadImage("img/flames.gif");
   des[0] = loadImage('img/des1.jpg');
-  des[1] = loadImage('img/des1.jpg');
-  des[2] = loadImage('img/des2.png');
-  des[3] = loadImage('img/des3.jpg');
-  des[4] = loadImage('img/des4.JPG');
-  des[5] = loadImage('img/des5.jpg');
+  des[1] = loadImage('img/des2.png');
+  des[2] = loadImage('img/des3.jpg');
+  des[3] = loadImage('img/des4.jpg');
+  des[4] = loadImage('img/des5.jpg');
+  des[5] = loadImage('img/des6.jpg');
   fun[0] = loadImage('img/fun1.jpg');
   fun[1] = loadImage('img/fun2.jpg');
   fun[2] = loadImage('img/fun3.jpg');
@@ -44,8 +44,6 @@ function setup() {
   angleMode(DEGREES);
   imageMode(CENTER);
   deg = 0;
-  desavail = [true, true, true, true, true, true];
-  funavail = [true, true, true, true, true, true];
 }
 
 function draw() {
@@ -53,6 +51,8 @@ function draw() {
     image(flames,432.5,375);
   } else {
     image(flames1,432.5,375);
+    shuffle(des, true);
+    shuffle(fun, true);
   }
 
   if (rock > 0) {
@@ -60,7 +60,7 @@ function draw() {
     translate(420,380);
     rotate(-5);
     tint(255,190);
-    image(d1,0,0);
+    image(des[0],0,0);
     pop();
   }
 
@@ -69,7 +69,7 @@ function draw() {
     translate(745,120);
     rotate(30);
     tint(255,190);
-    image(f1, 0, 0);
+    image(fun[0], 0, 0);
     pop()
   }
 
@@ -78,7 +78,7 @@ function draw() {
     translate(290,620);
     rotate(15);
     tint(255,190);
-    image(d2,0,0);
+    image(des[1],0,0);
     pop();
   }
 
@@ -87,7 +87,7 @@ function draw() {
     translate(700,615);
     rotate(-20);
     tint(255,190);
-    image(f2,0,0);
+    image(fun[1],0,0);
     pop();
   }
 
@@ -96,7 +96,7 @@ function draw() {
     translate(175,200);
     rotate(-20);
     tint(255,190);
-    image(d3,0,0);
+    image(des[2],0,0);
     pop()
   }
 
@@ -105,7 +105,7 @@ function draw() {
     translate(125,500);
     rotate(-35);
     tint(255,190);
-    image(f3,0,0);
+    image(fun[2],0,0);
     pop();
   }
 
@@ -114,7 +114,7 @@ function draw() {
     translate(625,430);
     rotate(25);
     tint(255,190);
-    image(d4,0,0);
+    image(des[3],0,0);
     pop();
   }
 
@@ -123,7 +123,7 @@ function draw() {
     translate(500,550);
     rotate(20);
     tint(255,190);
-    image(f4,0,0);
+    image(fun[3],0,0);
     pop();
   }
 
@@ -132,7 +132,7 @@ function draw() {
     translate(420,100);
     rotate(15);
     tint(255,190);
-    image(d5,0,0);
+    image(des[4],0,0);
     pop();
   }
 
@@ -141,7 +141,7 @@ function draw() {
     translate(690,290);
     rotate(-15);
     tint(255,190);
-    image(f5,0,0);
+    image(fun[4],0,0);
     pop();
   }
 
@@ -150,7 +150,7 @@ function draw() {
     translate(70,60);
     rotate(-25);
     tint(255,190);
-    image(d6,0,0);
+    image(des[5],0,0);
     pop();
   }
 
@@ -159,7 +159,7 @@ function draw() {
     translate(190,350);
     rotate(25);
     tint(255,190);
-    image(f6,0,0);
+    image(fun[5],0,0);
     pop();
   }
 
@@ -202,27 +202,7 @@ function mouseClicked() {
     move = false;
   } else {
     move = true;
-
-    d1 = getRandomItem(des);
-    d2 = getRandomItem(des);
-    d3 = getRandomItem(des);
-    d4 = getRandomItem(des);
-    d5 = getRandomItem(des);
-    d6 = getRandomItem(des);
-    f1 = getRandomItem(fun);
-    f2 = getRandomItem(fun);
-    f3 = getRandomItem(fun);
-    f4 = getRandomItem(fun);
-    f5 = getRandomItem(fun);
-    f6 = getRandomItem(fun);
-
   }
-}
-// get random item from array (source: programiz.com/javascript/examples/get-random-item)
-function getRandomItem(arr) {
-  const randomIndex = Math.floor(Math.random() * arr.length);
-  const item = arr[randomIndex];
-  return item;
 }
 
 
